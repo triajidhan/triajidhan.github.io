@@ -229,6 +229,40 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/* =================== CONTACT FORM =================== */
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxMJighnQ4-jAA8yM0SgDFuk-kMnoesQ7z35kbI3NfVNioFvvF0P139S3LNm17e8lPuRQ/exec'
+const form = document.forms['submit-to-google-sheet']
+const btnSend = document.querySelector('.contact__button')
+const btnLoading = document.querySelector('.contact__button-loading')
+const contactAlert = document.querySelector('.contact__alert')
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    // when click submit
+    btnLoading.classList.add('show-button-contact-loading')
+    btnSend.classList.add('hidden-button-contact')
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            btnLoading.classList.remove('show-button-contact-loading')
+            btnSend.classList.remove('hidden-button-contact')
+            contactAlert.classList.add('show-contact-alert')
+            form.reset()
+            console.log('Success!', response)
+        })
+        .catch(error => console.error('Error!', error.message))
+})
+
+/* ========= MENU HIDDEN ALERT ========= */
+/* Validate if constant exists */
+const alertClose = document.getElementById('contact-alert-close')
+
+if (alertClose) {
+    alertClose.addEventListener('click', () => {
+        contactAlert.classList.remove('show-contact-alert')
+    })
+}
+
+
 /* =================== SCROLL REVEAL ANIMATION =================== */
 const sr = ScrollReveal({
     origin: 'top',
@@ -242,11 +276,11 @@ sr.reveal('.home__title', {})
 sr.reveal('.home__title-name', { delay: 200 })
 sr.reveal('.home__data', { delay: 400 })
 sr.reveal('.home__scroll', { delay: 600 })
-sr.reveal('.home__img', { origin: 'right', delay: 600 })
+sr.reveal('.home__img', { origin: 'right', distance: '15px', delay: 600 })
 sr.reveal('.home__social-icon', { delay: 600, interval: 200 })
 
 /* SCROLL ABOUT */
-sr.reveal('.about__img', { origin: 'left', delay: 500 })
+sr.reveal('.about__img', { origin: 'left', distance: '15px', delay: 500 })
 sr.reveal('.about__description', { delay: 300 })
 sr.reveal('.about__buttons', { delay: 400 })
 
@@ -267,12 +301,12 @@ sr.reveal('.services__button', { delay: 600 })
 sr.reveal('.portfolio__container', { delay: 200 })
 
 /* SCROLL PROJECT */
-sr.reveal('.project__img', { origin: 'rigth', delay: 500 })
-sr.reveal('.project__title', { origin: 'left', delay: 200 })
-sr.reveal('.project__description', { origin: 'left', delay: 300 })
-sr.reveal('.project__button', { origin: 'left', delay: 400 })
+sr.reveal('.project__img', { origin: 'rigth', distance: '15px', delay: 500 })
+sr.reveal('.project__title', { origin: 'left', distance: '15px', delay: 200 })
+sr.reveal('.project__description', { origin: 'left', distance: '15px', delay: 300 })
+sr.reveal('.project__button', { origin: 'left', distance: '15px', delay: 400 })
 
 /* SCROLL CONTACT */
 sr.reveal('.contact__information', { delay: 200, interval: 100 })
 sr.reveal('.contact__content', { delay: 400, interval: 100 })
-sr.reveal('.contact__button', { origin: 'left', delay: 400 })
+sr.reveal('.contact__button', { origin: 'left', distance: '15px', delay: 400 })
