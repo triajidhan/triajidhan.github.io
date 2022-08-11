@@ -15,7 +15,7 @@
     <!-- =================== CSS =================== -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>Tri Aji Ramadhan</title>
 </head>
 
 <body>
@@ -76,6 +76,11 @@
                     <li class="nav__item">
                         <a href="#services" class="nav__link">
                             <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
                         </a>
                     </li>
                     <li class="nav__item">
@@ -599,6 +604,54 @@
             </div>
         </section>
 
+        <!-- =================== PORTFOLIO =================== -->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Portfolio</h2>
+            <span class="section__subtitle">Most recent work</span>
+
+            <div class="portfolio__container container swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- ========= PORTFOLIO 1 =========  -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio1.jpg" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Search Movie</h3>
+                            <p class="portfolio__description">Website to find information from movies using a public api (omdb api).</p>
+                            <a href="https://github.com/triajidhan/search-movies-fetch" class="button button--flex button--small portfolio__button" target="_blank">
+                                See Code
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- ========= PORTFOLIO 2 =========  -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio2.jpg" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Kasir App</h3>
+                            <p class="portfolio__description">website about e-commerce to order some food, drinks and snacks.</p>
+                            <a href="https://github.com/triajidhan/kasir-app-reactjs/tree/main" class="button button--flex button--small portfolio__button" target="_blank">
+                                See Code
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div> 
+                    
+                </div>
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                </div>
+
+                <!-- Add Paginataion -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
 
         <!-- =================== PROJECT IN MIND =================== -->
         <section class="project section">
