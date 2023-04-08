@@ -65,7 +65,6 @@ if (navCloseColor) {
     })
 }
 
-
 /* =================== CHANGE COLOR =================== */
 const redColor = 'red-color',
     greenColor = 'green-color',
@@ -140,10 +139,10 @@ tabs.forEach(tab => {
     })
 })
 
-/* =================== SERVICES MODAL =================== */
-const modalViews = document.querySelectorAll('.services__modal'),
-    modalBtns = document.querySelectorAll('.services__button'),
-    modalCloses = document.querySelectorAll('.services__modal-close')
+/* =================== PORTFOLIO MODAL =================== */
+const modalViews = document.querySelectorAll('.portfolio__modal'),
+    modalBtns = document.querySelectorAll('.portfolio__button'),
+    modalCloses = document.querySelectorAll('.portfolio__modal-close')
 
 let modal = function (modalClick) {
     modalViews[modalClick].classList.add('active-modal')
@@ -162,21 +161,6 @@ modalCloses.forEach((modalClose) => {
         })
     })
 })
-
-/* =================== PORTFOLIO SWIPER =================== */
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
 
 /* =================== SCROLL SECTIONS ACTIVE LINK =================== */
 const sections = document.querySelectorAll('section[id]')
@@ -307,19 +291,11 @@ sr.reveal('.skills__list', { delay: 200, interval: 200 })
 sr.reveal('.qualification__tabs', { delay: 100 })
 sr.reveal('.qualification__section', { delay: 400 })
 
-/* SCROLL SERVICE */
-sr.reveal('.services__title', { delay: 400 })
-sr.reveal('.services__icon', { delay: 200 })
-sr.reveal('.services__button', { delay: 600 })
-
 /* SCROLL PORTFOLIO */
-sr.reveal('.portfolio__container', { delay: 200 })
-
-/* SCROLL PROJECT */
-sr.reveal('.project__img', { origin: 'rigth', distance: '15px', delay: 500 })
-sr.reveal('.project__title', { origin: 'left', distance: '15px', delay: 200 })
-sr.reveal('.project__description', { origin: 'left', distance: '15px', delay: 300 })
-sr.reveal('.project__button', { origin: 'left', distance: '15px', delay: 400 })
+sr.reveal('.portfolio__title', { delay: 400 })
+sr.reveal('.portfolio__icon', { delay: 200 })
+sr.reveal('.portfolio__button', { delay: 600 })
+sr.reveal('.portfolio-img', { delay: 300 })
 
 /* SCROLL CONTACT */
 sr.reveal('.contact__information', { delay: 200, interval: 100 })
